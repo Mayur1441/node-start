@@ -67,7 +67,7 @@ const countUsers = async (filter) => {
 const userCreate = async (body) => {
     const filter = { username: body.username };
 
-    if (!(await countUsers(filter))) throw ER_USERNAME_ALREADY_EXISTS;
+    if (await countUsers(filter)) throw ER_USERNAME_ALREADY_EXISTS;
 
     body.password = md5(body.password);
     return await insertOneUser(body);

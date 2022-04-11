@@ -30,7 +30,7 @@ const apiAuthMiddleware = async (req, res, next) => {
             if (_userId && tokenIP && tokenIP === requestIP) {
                 const filter = { _id: _userId };
                 const user = await findOneUser(filter);
-                if (user && user.token === token) {
+                if (user) {
                     req._userId = _userId;
                     return next();
                 }
