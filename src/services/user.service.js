@@ -50,6 +50,17 @@ const updateOneUser = async ( filter, reflection ) => {
 }
 
 /**
+ * Update User
+ * @param {*} body
+ * @returns
+ */
+const updateUser = async ( body ) => {
+    const user = await findOneUser({ username: body.username });
+    if( !user ) throw ER_DOCUMENT_NOT_FOUND(`User ${body.username}`);
+    return await userModel.findByIdAndUpdate(user._id, body);
+}
+
+/**
  * Count number of users
  * @param {*} filter 
  * @returns 
@@ -117,6 +128,7 @@ module.exports = {
     findOneUser,
     userCreate,
     getAllUser,
+    updateUser,
     userLogin,
     userLogout
 };

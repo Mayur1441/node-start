@@ -19,6 +19,22 @@ const userCreate = async (req, res, next) => {
 };
 
 /**
+ * Update User controller
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+const userUpdate = async (req, res, next) => {
+    try {
+        const data = await userService.updateUser(req.body);
+        console.log('req.body1', req.body);
+        return res.send(data);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+/**
  * User login controller
  * @param {*} req
  * @param {*} res
@@ -71,6 +87,7 @@ const userLogout = async (req, res, next) => {
 module.exports = {
     userCreate,
     userLogin,
+    userUpdate,
     userGet,
     userLogout
 };
