@@ -10,7 +10,7 @@ const userRouter = new Router();
 
 // REQUEST DEFINITIONS =================================================
 userRouter.post("/create", userController.userCreate);
-userRouter.put("/login", userController.userLogin);
+userRouter.post("/login", userController.userLogin);
 userRouter.get("/get", userController.userGet);
 
 userRouter.use(apiAuthMiddleware); // REQUESTS BELOW HERE REQUIRE AUTHENTICATION.
