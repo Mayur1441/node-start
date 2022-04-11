@@ -1,0 +1,24 @@
+{
+  "name": "men_single_login_boiler",
+  "version": "1.0.0",
+  "description": " This is a boilerplate for API development using MEN stack with jwt tokenizer, where user can login with only one instance per user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js"
+  },
+  "author": "Azereon",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-mung": "^0.5.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.3.0",
+    "md5": "^2.3.0",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15"
+  }
+}
